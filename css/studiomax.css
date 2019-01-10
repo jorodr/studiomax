@@ -176,7 +176,7 @@ html, body{
 }
 
 .top.index-page{
-	background-image:url('../images/Onepixel_1089312_1400_opacity.jpg');
+	background-image:url('../images/Onepixel_1089312_1400.jpg');
 }
 
 .top.internal-page{
@@ -414,8 +414,8 @@ html, body{
 }
 
 .recommendations{
-	padding-top:100px;
-	padding-bottom:100px;
+	padding-top:150px;
+	padding-bottom:150px;
 	background:url("../images/Onepixel_2670458.jpg")no-repeat left center;
 	background-size:cover;
 	background-attachment:fixed;

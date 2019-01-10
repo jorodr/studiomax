@@ -3,7 +3,7 @@
 				<img class="img-fluid" src="images/contact-us-2993000_640.jpg"/>
 			</div>
 			<div class="col-md-6 right-footer">
-				<img class="img-fluid" src="images/studiomax_logo_path.svg"/>
+				<img class="img-fluid" src="<?php echo esc_url(get_template_directory_uri() . '/images/studiomax_logo_path.svg') ?>"/>
 				<p>
 					инж.Румяна Илкова<br>
 					тел. 0897196396<br>
@@ -29,17 +29,7 @@
 			
 		</div>
 	</div><!-- Container fluid -->
-	
-	
-
-	<script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous">
-	</script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script src="vendor/scroll_to/jquery.scrollTo.min.js"></script>
-	<script type="text/javascript" src="js/lightbox.min.js"></script>	
-	<script type="text/javascript" src="js/scripts.js"></script>
+        
+        <?php wp_footer(); ?>
 </body>
 </html>

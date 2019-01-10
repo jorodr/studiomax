@@ -1,13 +1,29 @@
+<?php get_header() ?>
 
-	
-		<section class="row top index-page" id="top-section">
-			<div class="intro">
-				<img src="images/studiomax_logo_path.svg" />
-			</div>				
-		</section>
-		<section class="row about" id="about-section">
+                <section class="row top index-page" id="top-section" style="background-image:url('<?php
+                    if (get_theme_mod('studiomax_frontpage_header_image') > 0) {
+                        echo wp_get_attachment_url(get_theme_mod('studiomax_frontpage_header_image'));
+                    }
+                    else {
+                        echo esc_url(get_template_directory_uri() . '/images/Onepixel_1089312_1400.jpg');
+                    }
+                    ?>')" >  
+                    <div class="intro">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/images/studiomax_logo_path.svg') ?>" />
+                    </div>	
+                
+                </section>
+
+		<section class="row about" id="about-section">                    
 			<div class="col-md-6 thumbnail">
-				<img class="img-fluid" src="images/artisan-895670_640.jpg"/>
+                            <img class="img-fluid" src="<?php
+                                if (get_theme_mod('studiomax_about_us_image') > 0) {
+                                    echo wp_get_attachment_url(get_theme_mod('studiomax_about_us_image'));
+                                }
+                                else {
+                                    echo esc_url(get_template_directory_uri() . '/images/Onepixel_1089312_1400.jpg');
+                                }
+                            ?>"/>
 			</div>
 			<div class="col-md-6 paragraph">
 				<h2>За нас</h2>
@@ -17,26 +33,54 @@
 				</p>
 			</div>
 		</section>
+
 		<section class="row services" id="services-section">
-			<h2>Услуги</h2>
-			<div class="service col-md-4">					
-				<div class="service-image">
-					<div class='servicee-icon'><img src="images/bormashina.svg" width='100px'/></div>
-					<a href="dovarshitelni.php" class="service-title"><h3>ДОВЪРШИТЕЛНИ РАБОТИ.</h3></a>
-				</div>				
-			</div>
-			<div class="service col-md-4">				
-				<div class="service-image">
-					<div class='servicee-icon'><img src="images/design.svg" width='100px' /></div>
-					<a href="interioren-dizain.php" class="service-title"><h3> ИНТЕРИОРЕН ДИЗАЙН.</h3></a>
-				</div>	
-			</div>
-			<div class="service col-md-4">				
-				<div class="service-image">
-					<div class='servicee-icon'><img src="images/interior.svg" width='100px' /></div>
-					<a href="obzavejdane.php" class="service-title"><h3>ОБЗАВЕЖДАНЕ ПО ИНДИВИДУАЛЕН ПРОЕКТ.</h3></a>
-				</div>	
-			</div>
+                    
+                    <h2>Услуги</h2>
+                    <div class="service col-md-4" >					
+                            <div class="service-image"  style="background-image:url('<?php
+                                if (get_theme_mod('studiomax_services_image') > 0) {
+                                    echo wp_get_attachment_url(get_theme_mod('studiomax_services_image'));
+                                }
+                                else {
+                                    echo esc_url(get_template_directory_uri() . '/images/Onepixel_3313854.jpg');
+                                }
+                                ?>')" 
+                            >
+                                    <div class='servicee-icon'><img src="<?php echo esc_url(get_template_directory_uri() . '/images/bormashina.svg'); ?>" width='100px'/></div>
+                                    <a href="dovarshitelni.php" class="service-title"><h3>ДОВЪРШИТЕЛНИ РАБОТИ.</h3></a>
+                            </div>				
+                    </div>
+                    
+                    <div class="service col-md-4">				
+                            <div class="service-image"  style="background-image:url('<?php
+                                if (get_theme_mod('studiomax_services_image') > 0) {
+                                    echo wp_get_attachment_url(get_theme_mod('studiomax_services_image'));
+                                }
+                                else {
+                                    echo esc_url(get_template_directory_uri() . '/images/Onepixel_3313854.jpg');
+                                }
+                                ?>')" 
+                            >
+                                    <div class='servicee-icon'><img src="<?php echo esc_url(get_template_directory_uri() . '/images/design.svg'); ?>" width='100px'/></div>
+                                    <a href="interioren-dizain.php" class="service-title"><h3> ИНТЕРИОРЕН ДИЗАЙН.</h3></a>
+                            </div>	
+                    </div>
+                    
+                    <div class="service col-md-4">				
+                            <div class="service-image"  style="background-image:url('<?php
+                                if (get_theme_mod('studiomax_services_image') > 0) {
+                                    echo wp_get_attachment_url(get_theme_mod('studiomax_services_image'));
+                                }
+                                else {
+                                    echo esc_url(get_template_directory_uri() . '/images/Onepixel_3313854.jpg');
+                                }
+                                ?>')" 
+                            >
+                                    <div class='servicee-icon'><img src="<?php echo esc_url(get_template_directory_uri() . '/images/interior.svg'); ?>" width='100px'/></div>
+                                    <a href="obzavejdane.php" class="service-title"><h3>ОБЗАВЕЖДАНЕ ПО ИНДИВИДУАЛЕН ПРОЕКТ.</h3></a>
+                            </div>	
+                    </div>
 		</section>
 		<section class="row experience" id="experience-section">
 					
@@ -45,44 +89,20 @@
 	
 	<div class="container portfolio" id="portfolio-section">
 		<h2>Галерия</h2>
-		<section class="row portfolio-design">			
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/design/SP6.png" data-lightbox="design-set" ><img class="example-image img-fluid" src="images/design/SP6.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/design/WMsession-1.png" data-lightbox="design-set" ><img class="example-image img-fluid" src="images/design/WMsession-1.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/design/anagliph-4.png" data-lightbox="design-set" "><img class="example-image img-fluid" src="images/design/anagliph-4.png" alt=""/></a>				
-			</div>
-		</section>
-		
-		<section class="row portfolio-illustration">	
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/illustration/illustration-1.png" data-lightbox="illustration-set" ><img class="example-image img-fluid" src="images/illustration/illustration-1.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/illustration/illustration-2.png" data-lightbox="illustration-set" ><img class="example-image img-fluid" src="images/illustration/illustration-2.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/illustration/illustration-6.png" data-lightbox="illustration-set" "><img class="example-image img-fluid" src="images/illustration/illustration-6.png" alt=""/></a>				
-			</div>
-		</section>
-		
-		<section class="row portfolio-art">
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/art/art1.png" data-lightbox="art-set" ><img class="example-image img-fluid" src="images/art/art1.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/art/art3.png" data-lightbox="art-set" ><img class="example-image img-fluid" src="images/art/art3.png" alt=""/></a>				
-			</div>
-			<div class="col-md-4">
-				<a class="portfolio-image-link" href="images/art/art4.png" data-lightbox="art-set" "><img class="example-image img-fluid" src="images/art/art4.png" alt=""/></a>				
-			</div>
-		</section>
-	</div><!-- Container fluid -->
+		<?php dynamic_sidebar( 'frontpage-gallery-widget-area' ); ?>
+	</div><!-- Container -->
 	
-	<div class="container-fluid recommendations">	
+	<div class="container-fluid recommendations"
+             style="background-image:url('<?php
+                    if (get_theme_mod('studiomax_quote_image') > 0) {
+                        echo wp_get_attachment_url(get_theme_mod('studiomax_quote_image'));
+                    }
+                    else {
+                        echo esc_url(get_template_directory_uri() . '/images/Onepixel_2670458.jpg');
+                    }
+                    ?>')                
+             "
+             >	
 		<div class="row">
 			<p class="col-md-8 col-xs-11">“СЪЩНОСТТА НА ЕДНА СГРАДА Е НЕЙНОТО ВЪТРЕШНО ПРОСТРАНСТВО” </p>			
 			<p class="col-md-8 col-xs-11 recomendator">ФРАНК ЛОЙД РАЙТ</p>
@@ -103,6 +123,6 @@
 			
 		</section>
 					
-
+<?php get_footer() ?>
 
 
