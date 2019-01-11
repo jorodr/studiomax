@@ -68,28 +68,27 @@
                     </div>
                     
                     <div class="service col-md-4">				
-                            <div class="service-image"  style="background-image:url('<?php
-                                if (get_theme_mod('studiomax_services_image') > 0) {
-                                    echo wp_get_attachment_url(get_theme_mod('studiomax_services_image'));
-                                }
-                                else {
-                                    echo esc_url(get_template_directory_uri() . '/images/Onepixel_3313854.jpg');
-                                }
-                                ?>')" 
-                            >
-                                    <div class='servicee-icon'><img src="<?php echo esc_url(get_template_directory_uri() . '/images/interior.svg'); ?>" width='100px'/></div>
-                                    <a href="obzavejdane.php" class="service-title"><h3>ОБЗАВЕЖДАНЕ ПО ИНДИВИДУАЛЕН ПРОЕКТ.</h3></a>
-                            </div>	
+                        <div class="service-image"  style="background-image:url('<?php
+                            if (get_theme_mod('studiomax_services_image') > 0) {
+                                echo wp_get_attachment_url(get_theme_mod('studiomax_services_image'));
+                            }
+                            else {
+                                echo esc_url(get_template_directory_uri() . '/images/Onepixel_3313854.jpg');
+                            }
+                            ?>')" 
+                        >
+                                <div class='servicee-icon'><img src="<?php echo esc_url(get_template_directory_uri() . '/images/interior.svg'); ?>" width='100px'/></div>
+                                <a href="obzavejdane.php" class="service-title"><h3>ОБЗАВЕЖДАНЕ ПО ИНДИВИДУАЛЕН ПРОЕКТ.</h3></a>
+                        </div>	
                     </div>
 		</section>
-		<section class="row experience" id="experience-section">
-					
+		<section class="row content" id="content-section">
+                    
 		</section>
 	</div><!-- Container fluid -->	
 	
 	<div class="container portfolio" id="portfolio-section">
-		<h2>Галерия</h2>
-		<?php dynamic_sidebar( 'frontpage-gallery-widget-area' ); ?>
+            <?php dynamic_sidebar( 'frontpage-gallery-widget-area' ); ?>
 	</div><!-- Container -->
 	
 	<div class="container-fluid recommendations"
@@ -110,18 +109,12 @@
 	</div><!-- Container fluid -->
 	
 	<div class="container-fluid">
-		<section class="row message-form">
-			<div class="col-md-6 offset-md-3">
-				<form action="get_message.php" method="get" id="contact-form">
-					<input type="text" name="name" id="name" placeholder="Your Name" />
-					<input type="text" name="email" id="email" placeholder="e-mail"/>
-					<input type="text" name="subject" id="subject" placeholder="Subject"/>
-					<textarea class="message-content" placeholder="Yourself message here..." name='message' id ='message'></textarea>		
-					<input type="submit" id="submit" value="SEND MESSAGE" />
-				</form>	
-			</div>
-			
-		</section>
+            <section class="row message-form">
+                <div class="col-md-6 offset-md-3" id="contact-form">
+                    <?php dynamic_sidebar( 'frontpage-contact-form-widget-area' ); ?>
+                </div>                
+            </section>
+        </div><!-- container-fluid -->
 					
 <?php get_footer() ?>
 

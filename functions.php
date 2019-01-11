@@ -12,18 +12,25 @@ function studiomax_styles_and_scripts() {
     $template_directory = get_template_directory_uri();
     
     // add styles
-    wp_enqueue_style(bootstrap, $template_directory . '/vendor/bootstrap/bootstrap.min.css');
-    wp_enqueue_style(lightbox, $template_directory . '/vendor/lightbox/lightbox.css');
-    wp_enqueue_style(studiomax, $template_directory . '/css/studiomax.css');
+    wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.5.0/css/all.css' );
+    wp_enqueue_style('bootstrap', $template_directory . '/vendor/bootstrap/bootstrap.min.css');
+    wp_enqueue_style('studiomax', $template_directory . '/css/studiomax.css');
     
     // add scripts
     wp_enqueue_script('bootstrap', $template_directory . '/vendor/bootstrap/bootstrap.min.js', array('jquery'), false, true);
-    wp_enqueue_script('lightbox', $template_directory . '/vendor/lightbox/lightbox.min.js', array('jquery'), false, true);
     wp_enqueue_script('scrollto', $template_directory . '/vendor/scroll_to/jquery.scrollTo.min.js', array('jquery'), false, true);
     wp_enqueue_script('studiomax', $template_directory . '/js/scripts.js', array('jquery'), false, true);
 }
 
 add_action('wp_enqueue_scripts', 'studiomax_styles_and_scripts');
+
+//Add menus and post thumbnails theme support
+function studiomax_theme_support() {
+  add_theme_support('menus');
+  add_theme_support( 'post-thumbnails' ); 
+}
+
+add_action('after_setup_theme', 'studiomax_theme_support');
 
 // ******************** Custom settings ********************
 
@@ -105,14 +112,44 @@ add_action('customize_register', 'studiomax_custom_settings');
 
 function studiomax_widgets_setup() {
   register_sidebar(array(
-    'name' => 'frontpage-gallery-widget-area',
+    'name' => 'Frontpage Gallery',
     'id' => 'frontpage-gallery-widget-area',
     'before_widget' => '<div class="frontpage-gallery">',
     'after_widget' => '</div>',
     'before_title' => '<h5>',
     'after_title' => '</h5>',
     'description' => 'Frontpage gallery widget area',
-  ));  
+  )); 
+  
+  register_sidebar(array(
+    'name' => 'Contact Form',
+    'id' => 'frontpage-contact-form-widget-area',
+    'before_widget' => '<div class="contact-form">',
+    'after_widget' => '</div>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+    'description' => 'Contact Form widget area',
+  )); 
+  
+  register_sidebar(array(
+    'name' => 'Left Footer',
+    'id' => 'left-footer-widget-area',
+    'before_widget' => '<div class="left-footer">',
+    'after_widget' => '</div>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+    'description' => 'Left footer widget area',
+  ));
+  
+  register_sidebar(array(
+    'name' => 'Right Footer',
+    'id' => 'right-footer-widget-area',
+    'before_widget' => '<div class="right-footer">',
+    'after_widget' => '</div>',
+    'before_title' => '<h5>',
+    'after_title' => '</h5>',
+    'description' => 'Right footer widget area',
+  ));
 }
 
 add_action('widgets_init', 'studiomax_widgets_setup');

@@ -24,14 +24,14 @@
 			</div>
 			<nav class="main-navigation">
 				<ul>
-					<li><a href="#" id="home-link">Начало</a></li>
-					<li><a href="#" id="about-link">За нас</a></li>
-					<li><a href="#" id="services-link">Услуги</a></li>
-					<li><a href="#" id="portfolio-link">Галерия</a></li>
-					<li><a href="#" id="contact-link">Контакти</a></li>
+					<li><a href="/" id="home-link">Начало</a></li>
+					<li><a href="/#about-link" id="about-link">За нас</a></li>
+					<li><a href="/#services-link" id="services-link">Услуги</a></li>
+					<li><a href="/#portfolio-link" id="portfolio-link">Галерия</a></li>
+					<li><a href="/#contact-link" id="contact-link">Контакти</a></li>
 				</ul>
 			</nav>
-			<div class="menu-icons">
+			<div class="main-menu menu-icons">
 				<ul class='icons-row'>
 					<li><a href="http://linkedin.com/in/ivanovaboryana"><i class="fab fa-twitter"></i></a></li>
 					<li><a href="https://twitter.com/i_boryana"><i class="fab fa-linkedin-in"></i></a></li>
